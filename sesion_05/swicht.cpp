@@ -10,6 +10,12 @@ int main()
     cout << "ingrese un numero del 1 al 7" << endl;
     cin >> dia;
 
+    while (dia > 7 || dia <= 0)
+    {
+        cout << "ingrese un numero del 1 al 7" << endl;
+        cin >> dia;
+    }
+
     switch (dia)
     {
     case 1:
