@@ -17,9 +17,14 @@ int main()
 void suma(int numero_1, int numero_2)
 {
     // return numero_1 + numero_2;
-    cout << "la suma es: " << numero_1 + numero_2 << endl;
+    cout << "la suma es: " << suma_2(12,15,14)<< endl;
 }
 
+int suma_2(int numero_1,  int numero_2, int numero_3)
+{
+     return numero_1 + numero_2;
+    //cout << "la suma es: " << numero_1 + numero_2 << endl;
+}
 void ingreso_valores()
 {
     cout << "Ingrese primer numero" << endl;
