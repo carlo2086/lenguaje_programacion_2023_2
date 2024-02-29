@@ -12,7 +12,9 @@ private:
     string siglas;
 
 public:
-    Facultad();
+    Facultad(){
+        
+    }
     
     Facultad(string _codigo, string _nombre, string _siglas)
     {

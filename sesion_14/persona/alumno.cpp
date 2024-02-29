@@ -19,7 +19,9 @@ private:
     int numCurso = 0;
 
 public:
-    Alumno(/* args */);
+    Alumno(/* args */){
+        
+    }
 
     Alumno(string _codigo_alumno, int _año, int _codigo, string _apellidos, string _nombre, int _edad) : Persona(_codigo, _apellidos, _nombre, _edad)
     {
@@ -62,7 +64,7 @@ public:
     {
         return cursos[posicion];
     }
-    
+
     void agregarCurso(Curso curso)
     {
         if (numCurso < 3)
@@ -77,15 +79,20 @@ public:
         }
     }
 
-    /*void mostrarCursos()
+    void mostrarCursos()
     {
-        cout << "Cursos del estudiante :" << getApellidos() << " " << getNombres();
+        cout << "Cursos del estudiante :" << GetApellidos() << " " << GetNombres();
         cout << "\n";
-        if (sizeof(cursos) / sizeof(cursos[0]) != 0)
+        int size = sizeof(cursos) / sizeof(cursos[0]);
+        //cout << size;
+        if (size != 0)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < size; i++)
             {
-                cout << " .- " << cursos[i].toString() << "\n";
+                if (cursos[i].GetCodigo_curso() != "")
+                {
+                    cout << i + 1 << " .- " << cursos[i].toString() << "\n";
+                }
             }
         }
         else
@@ -93,5 +100,24 @@ public:
             cout << "No se registraron cursos para el estudiante ...........";
             cout << "\n";
         }
-    }*/
+    }
+
+    void ingresar_notas(string _codigo_curso, float nota1, float nota2, float nota3)
+    {
+        // buscamos el curso por codigo
+        int size = sizeof(cursos) / sizeof(cursos[0]);
+        if (size > 0)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (cursos[i].GetCodigo_curso() == _codigo_curso)
+                {
+                    // cout<<"curso encontrado";
+                    cursos[i].setNota(1, nota1);
+                    cursos[i].setNota(2, nota2);
+                    cursos[i].setNota(3, nota3);
+                }
+            }
+        }
+    }
 };

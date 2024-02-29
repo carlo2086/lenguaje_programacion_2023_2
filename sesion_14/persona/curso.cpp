@@ -10,11 +10,13 @@ private:
     string codigo_curso;
     string nombre_curso;
     int creditaje;
-    float notas[3];
+    float notas[3] = {0,0,0};
     float promedio_final;
 
 public:
-    Curso();
+    Curso()
+    {
+    }
     Curso(string _codigo, string _nombre, int _credito)
     {
         codigo_curso = _codigo;
@@ -75,8 +77,9 @@ public:
         int size = sizeof(notas) / sizeof(notas[0]);
         if (size == 3)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < size; i++)
             {
+                //cout << "nota... " + i << notas[i] << endl;
                 suma = suma + notas[i];
             }
             promedio_final = suma / 3;
@@ -87,6 +90,13 @@ public:
     {
         calcular_promedio();
         string resumen = "Curso: " + nombre_curso + " --> Credito:  " + to_string(creditaje) + " --> Promedio: " + to_string(promedio_final);
+        return resumen;
+    }
+
+       string datos_curso()
+    {
+        //calcular_promedio();
+        string resumen = "Curso: " + nombre_curso + " --> Credito:  " + to_string(creditaje) + " \n";
         return resumen;
     }
 };
