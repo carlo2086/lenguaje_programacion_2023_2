@@ -19,13 +19,11 @@ int main(){
 
     alumno_1.agregarCurso(curso_01);
     alumno_1.agregarCurso(curso_02);
-    //alumno_1.agregarCurso(curso_03);
+    alumno_1.agregarCurso(curso_03);
 
 
     alumno_1.mostrarCursos();
-
-    alumno_1.ingresar_notas("001", 13.45, 13.56, 05);
-
+    alumno_1.ingresar_notas("001", 13.45, 13.56, 5);
     alumno_1.mostrarCursos();
     
 }
