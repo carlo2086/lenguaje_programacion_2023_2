@@ -1,0 +1,2 @@
+**Errores al compilar** 
+Mensaje: Error: division por cero--11/3/2024
